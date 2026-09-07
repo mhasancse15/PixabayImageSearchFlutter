@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../presentation/home/bindings/home_binding.dart';
 import '../../presentation/home/pages/home_page.dart';
-import '../../presentation/image_detail/bindings/image_detail_binding.dart';
 import '../../presentation/image_detail/pages/image_detail_page.dart';
 import 'app_routes.dart';
 
@@ -19,12 +17,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomePage(),
-      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.imageDetail,
       page: () => const ImageDetailPage(),
-      binding: ImageDetailBinding(),
       transition: Transition.fadeIn,
     ),
   ];

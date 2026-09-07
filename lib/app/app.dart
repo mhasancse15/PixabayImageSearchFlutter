@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../core/constants/app_constants.dart';
-import 'app_binding.dart';
 import 'routes/app_pages.dart';
 import 'theme/app_theme.dart';
 
@@ -20,7 +19,6 @@ class App extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,
-      initialBinding: AppBinding(),
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
     );

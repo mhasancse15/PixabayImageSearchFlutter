@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../core/constants/api_constants.dart';
 import '../../core/network/api_client.dart';
 import '../../domain/entities/image_search_params.dart';
@@ -13,6 +15,7 @@ abstract class ImageRemoteDataSource {
   Future<PixabayResponseModel> searchImages(ImageSearchParams params);
 }
 
+@LazySingleton(as: ImageRemoteDataSource)
 class ImageRemoteDataSourceImpl implements ImageRemoteDataSource {
   final ApiClient apiClient;
 

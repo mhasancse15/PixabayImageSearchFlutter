@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/api_constants.dart';
@@ -10,10 +11,11 @@ import '../error/exceptions.dart';
 /// Data sources depend on this instead of raw [Dio] so that swapping
 /// the HTTP client later (e.g. to `http` or a mock) only touches one
 /// class.
+@lazySingleton
 class ApiClient {
   final Dio _dio;
 
-  ApiClient({Dio? dio}) : _dio = dio ?? Dio() {
+  ApiClient(this._dio) {
     _dio.options = BaseOptions(
       baseUrl: ApiConstants.baseUrl,
       connectTimeout: ApiConstants.connectTimeout,

@@ -1,4 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:injectable/injectable.dart';
 
 /// Abstraction over device connectivity so the repository layer can be
 /// unit-tested without touching platform channels.
@@ -6,6 +7,7 @@ abstract class NetworkInfo {
   Future<bool> get isConnected;
 }
 
+@LazySingleton(as: NetworkInfo)
 class NetworkInfoImpl implements NetworkInfo {
   final Connectivity connectivity;
 

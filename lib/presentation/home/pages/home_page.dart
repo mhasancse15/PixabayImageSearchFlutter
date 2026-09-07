@@ -6,16 +6,19 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/widgets/empty_view.dart';
 import '../../../core/widgets/error_view.dart';
 import '../../../core/widgets/loading_view.dart';
+import '../../../core/di/injection.dart';
 import '../controllers/home_controller.dart';
 import '../widgets/image_grid_item.dart';
 import '../widgets/search_bar_widget.dart';
 
 /// Root screen: search field + a paginated grid of Pixabay images.
-class HomePage extends GetView<HomeController> {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(getIt<HomeController>());
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppConstants.appName),

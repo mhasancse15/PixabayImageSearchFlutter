@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../core/constants/api_constants.dart';
 import '../../../core/constants/app_constants.dart';
@@ -14,6 +15,7 @@ import '../../../domain/usecases/search_images_usecase.dart';
 ///
 /// All mutable UI state lives in `.obs` fields so [HomePage] can stay
 /// a stateless, purely reactive widget with `Obx`/`GetX` builders.
+@injectable
 class HomeController extends GetxController {
   final SearchImagesUseCase searchImagesUseCase;
 

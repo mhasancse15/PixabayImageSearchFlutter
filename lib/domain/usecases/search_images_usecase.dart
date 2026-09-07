@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../core/error/failures.dart';
 import '../entities/image_page_entity.dart';
@@ -11,6 +12,7 @@ import 'usecase.dart';
 /// An empty query is valid and simply returns Pixabay's default
 /// "trending" style feed, so this single use case powers both the
 /// initial home feed and user-driven search.
+@injectable
 class SearchImagesUseCase implements UseCase<ImagePageEntity, ImageSearchParams> {
   final ImageRepository repository;
 

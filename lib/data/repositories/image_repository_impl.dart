@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../core/error/exceptions.dart';
 import '../../core/error/failures.dart';
@@ -16,6 +17,7 @@ import '../datasources/image_remote_data_source.dart';
 /// 3. Catch data-layer exceptions and translate them into typed
 ///    [Failure]s so the domain/presentation layers stay decoupled
 ///    from networking/parsing internals.
+@LazySingleton(as: ImageRepository)
 class ImageRepositoryImpl implements ImageRepository {
   final ImageRemoteDataSource remoteDataSource;
   final NetworkInfo networkInfo;
