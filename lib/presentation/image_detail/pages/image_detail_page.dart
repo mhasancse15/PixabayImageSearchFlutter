@@ -2,9 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/di/injection.dart';
 import '../../../domain/entities/image_entity.dart';
-import '../controllers/image_detail_controller.dart';
 
 /// Full-screen view of a single image with metadata (author, stats,
 /// tags) pulled straight from the entity handed off by the grid —
@@ -15,8 +13,6 @@ class ImageDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final image = Get.arguments as ImageEntity;
-    final controller = Get.put(getIt<ImageDetailController>(param1: image));
-
     return Scaffold(
       body: CustomScrollView(
         slivers: [
