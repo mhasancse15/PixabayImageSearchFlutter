@@ -46,11 +46,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i794.NetworkInfoImpl(gh<_i895.Connectivity>()),
     );
     gh.lazySingleton<_i785.ApiClient>(() => _i785.ApiClient(gh<_i361.Dio>()));
-    gh.lazySingleton<_i903.ImageRemoteDataSource>(
-      () => _i903.ImageRemoteDataSourceImpl(gh<_i785.ApiClient>()),
-    );
     gh.factoryParam<_i732.ImageDetailController, _i163.ImageEntity, dynamic>(
       (image, _) => _i732.ImageDetailController(image: image),
+    );
+    gh.lazySingleton<_i903.ImageRemoteDataSource>(
+      () => _i903.ImageRemoteDataSourceImpl(gh<_i785.ApiClient>()),
     );
     gh.lazySingleton<_i144.ImageRepository>(
       () => _i1052.ImageRepositoryImpl(
